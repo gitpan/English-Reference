@@ -8,3 +8,6 @@ Revision history for Perl extension English::Reference.
         system clock was off and I had to rebuild
 	cleaned up the POD
 	added deref
+0.03  Wed Aug 30 14:19:41 UTC 2000
+	- Updated by Jerrad Pierce
+	Was careless, added prototypes for DWIM with print SCALAR \"a", "\n";

@@ -20,23 +20,23 @@ $VERSION = '0.01';
 
 #bootstrap English::Reference $VERSION;
 
-sub ARRAY {
+sub ARRAY($) {
     return @{ shift() };
 }
-sub CODE {
+sub CODE($) {
     return &{ shift() };
 }
-sub GLOB {
+sub GLOB($) {
     return *{ shift() };
 }
-sub HASH {
+sub HASH($) {
     return %{ shift() };
 }
-sub SCALAR {
+sub SCALAR($) {
     return ${ shift() };
 }
 
-sub deref {
+sub deref($) {
     no strict qw(refs);
     return &{ref($_[0])}($_[0]);
 }
@@ -103,22 +103,10 @@ You cannot do ARRAY{$arrayref} etc. This is not too bad seeing
 as the whole point of this module is to reduce the amount of
 punctuation you use.
 
-Some constructs will not have the desired results.
-
-=over 4
-
-print SCALAR $scalarref, "\n";
-
-=back
-
-for example. You're actually calling a subroutine named SCALAR
-without parentheses. This subroutune eats everything following
-it, and your newline ends up in never never land.
-
 =head1 AUTHORS
 
-Jerrad Pierce <belg4mit@mit.edu, the_lorax@usa.net>
-Jeff Pinyan <japhy@pobox.com> Casey R. Tweten <crt@kiski.net>
+Jerrad Pierce <belg4mit@mit.edu, the_lorax@usa.net>,
+Jeff Pinyan <japhy@pobox.com>, Casey R. Tweten <crt@kiski.net>
 
 =head1 SEE ALSO
 

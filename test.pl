@@ -32,3 +32,4 @@ print GLOB  ($hashref->{glb}) == *main::123 ? "ok 4\n" : "not ok 4\n";
 %F =  HASH  ($hashref->{hsh});
 print join('', sort %F) eq "aalphabbetaomegaz" ? "ok 5\n" : "not ok 5\n";
 print SCALAR($hashref->{scl}) eq "Shameless plug: pthbb.org" ? "ok 6\n" : "not ok 6\n";
+print( (sprintf "%s", SCALAR \"Hello World", "\n" eq "Hello World\n")? "ok 7\n" : "not ok 7\n");
